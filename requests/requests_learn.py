@@ -93,3 +93,22 @@ proxy = {'http': 'localhost:8080', 'https': 'localhost:8080'}  # Указыва�
 upload ='http://httpbin.org/anything' # Приемник который ждет что бы в него была загружена информация.
 with open('image.jpg', 'rb') as f:
     requests.post(upload, proxies=proxy, data=f)
+
+# скачивание файла _____________________
+import requests
+import shutil
+import os
+
+# файл, который надо скачать
+s = 'https://xakep.ru/robots.txt'
+
+# С помощью функции os.path.split(s) вытаскиеваем из строки путь к файлу и его имя
+dirname, filename = os.path.split(s)
+
+# GET-запрос в потоковом режиме stream=True для скачивания файла.
+r = requests.get(s, stream=True)
+if r.status_code ==200:
+    with open(filename, 'wb') as f:
+        r.raw.decode_content = True
+        shutil.copyfileobj(r.raw, f)
+# ------------------------------------------------------------------

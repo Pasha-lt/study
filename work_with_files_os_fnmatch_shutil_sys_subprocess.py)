@@ -36,7 +36,7 @@ for root, dirs, files in os.walk(r'/home/admin2/Desktop/Важное_дубль_
         if('.md' in fullname):  # выводим все файлы с расширением md
             print(fullname)
 
-# Узнаем размер файла и дату его можификации.
+# Узнаем размер файла и дату его модификации.
 path = r'/home/admin2/Desktop/2.jpg'
 # получаем размер файла в байтах
 size = os.path.getsize(path)

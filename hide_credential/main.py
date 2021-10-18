@@ -21,3 +21,10 @@ from dotenv import load_dotenv
 load_dotenv()
 var2 = os.getenv('var2') #edit configuration ...=>Environment variables
 print(var2) #вторая_переменная
+
+# Третий вариант. Создаем текстовый файл и прям с него вытягиваем наши данные,
+# есть много вариаций того как мы будет парсить данные
+with open('secret.txt', 'r') as f:
+    var3, var4 = f.read().split('\n')
+print(var3, var4)
+

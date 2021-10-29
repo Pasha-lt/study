@@ -26,3 +26,5 @@ print(info)  # Имя: Вася Пупкин. Возраст: 20. Адрес: у
 # Работа с join. 
 new_string = ' '.join(['Привет', 'Андрей']) #часто используется так как быстрее канкатынации. 
 print(new_string) # Привет Андрей
+
+print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',other='Anrey Tomson'))

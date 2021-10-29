@@ -18,6 +18,10 @@ details_num_all = 100000000
 print('На складе {first:,} деталей. На складе и в магазине {second:,} деталей.{first:,}'.format(first=details_num, second=details_num_all))
 # Вывод -> На складе 50,000,000 деталей. На складе и в магазине 100,000,000 деталей.50,000,000
 
+# Комбиниррование заполнения данными format
+print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',other='Anrey Tomson'))
+
+
 # Распаковываем список и помещаем его в форматирование.
 data = ['Вася Пупкин', 20, 'улица Пушкина, дом Колотушкина']
 info = 'Имя: {}. Возраст: {}. Адрес: {}'.format(*data)
@@ -27,4 +31,3 @@ print(info)  # Имя: Вася Пупкин. Возраст: 20. Адрес: у
 new_string = ' '.join(['Привет', 'Андрей']) #часто используется так как быстрее канкатынации. 
 print(new_string) # Привет Андрей
 
-print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',other='Anrey Tomson'))

@@ -1,6 +1,13 @@
 import re
+# 
 pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
 str = "Please contact my@google.com for assistance"
 match = re.search(pattern, str)
 if match:
    print(match.group()) # my@google.com
+
+my_str = 'обычный текст 123.234.33.10:808 просто текст 11.234.33.10:801'
+for in_str in my_str.split('текст'):
+   m = re.search(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?:\:\d{1,5})?)', in_str)
+   if m:
+      print(m[0])

@@ -1,4 +1,5 @@
 import re
+
 """
 \d = ANy Digit 0-9
 \D = Any non DIGIT
@@ -7,14 +8,14 @@ import re
 \s = breakspace
 \S = non breakspace
 + = 1 or more characters
+\. = dot
 """
 
 my_string = """
 Please contact my@google.com for assistance
 обычный текст 123.234.33.10:808 просто текст 11.234.33.10:801 0673898909 +3809875689
-Andrey fust Find CHSN Проверка русского текста Андрей одолжил ДЕНЕГ
+Andrey fust Find CHSN Проверка русского текста Андрей одолжил ДЕНЕГ Aaaaa Bbbbb Rrrrrr
 """
-
 
 # Ищем в строке имейл
 pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
@@ -44,4 +45,10 @@ print(phone_numbers)
 phone_numbers = re.findall(r'([А-Я][а-я]+)', my_string)
 print(phone_numbers)
 
+# Диапазон можно указывать не навесь алфавит, а на его часть
+phone_numbers = re.findall(r'([A-C][a-z]+)', my_string)
+print(phone_numbers)
 
+# Диапазон можно указывать не навесь алфавит, а на конкретную букву например.
+phone_numbers = re.findall(r'([R][a-z]+)', my_string)
+print(phone_numbers)

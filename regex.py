@@ -6,11 +6,13 @@ import re
 \W = Any non Alphabet symbol
 \s = breakspace
 \S = non breakspace
++ = 1 or more characters
 """
 
 my_string = """
 Please contact my@google.com for assistance
 обычный текст 123.234.33.10:808 просто текст 11.234.33.10:801 0673898909 +3809875689
+Andrey fust Find CHSN Проверка русского текста Андрей одолжил ДЕНЕГ
 """
 
 
@@ -33,4 +35,13 @@ print(all_result)
 # Ищем телефонные номера, в запросе говорим что нужно числа состоящие из 10-11 цифр.
 phone_numbers = re.findall(r'(\d{10,11})', my_string)
 print(phone_numbers)
+
+# Ищем слово с заглавной буквы. Ищем большую букву затем сколько угодно маленьких
+phone_numbers = re.findall(r'([A-Z][a-z]+)', my_string)
+print(phone_numbers)
+
+# Ищем слова с заглавной буквы в русском варианте
+phone_numbers = re.findall(r'([А-Я][а-я]+)', my_string)
+print(phone_numbers)
+
 

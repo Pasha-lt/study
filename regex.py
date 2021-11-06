@@ -45,10 +45,10 @@ print(phone_numbers)
 phone_numbers = re.findall(r'([А-Я][а-я]+)', my_string)
 print(phone_numbers)
 
-# Диапазон можно указывать не навесь алфавит, а на его часть
+# Диапазон можно указывать не на весь алфавит, а на его часть
 phone_numbers = re.findall(r'([A-C][a-z]+)', my_string)
 print(phone_numbers)
 
-# Диапазон можно указывать не навесь алфавит, а на конкретную букву например.
+# Диапазон можно указывать не на весь алфавит, а на конкретную букву например.
 phone_numbers = re.findall(r'([R][a-z]+)', my_string)
 print(phone_numbers)

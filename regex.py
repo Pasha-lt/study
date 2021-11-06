@@ -9,19 +9,27 @@ import re
 \S = non breakspace
 + = 1 or more characters
 \. = dot
+
+https://regex101.com/ = Cайт для тренировки и составления Регулярок
 """
 
 my_string = """
 Please contact my@google.com for assistance
 обычный текст 123.234.33.10:808 просто текст 11.234.33.10:801 0673898909 +3809875689
-Andrey fust Find CHSN Проверка русского текста Андрей одолжил ДЕНЕГ Aaaaa Bbbbb Rrrrrr
+andrey_str@gmail.com
+Andrey fust Find CHSN Проверка русского текста Андрей одолжил ДЕНЕГ Aaaaa Bbbbb Rrrrrr rrrr
 """
 
 # Ищем в строке имейл
 pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
 match = re.search(pattern, my_string)
 if match:
-    print(match.group())  # my@google.com
+    print(match.group())
+    
+# Еще один вариант поиска имейлов с в другой записи. Выводи сразу все емейлы.
+email_patern  = r"[\w._-]+@[\w._-]+\.[\w.]+"
+result = re.findall(email_patern, my_string)
+print(result)
 
 # Ищем в строке айпи адрес с портом
 for in_str in my_string.split('текст'):
@@ -45,10 +53,17 @@ print(phone_numbers)
 phone_numbers = re.findall(r'([А-Я][а-я]+)', my_string)
 print(phone_numbers)
 
-# Диапазон можно указывать не на весь алфавит, а на его часть
+# Диапазон можно указывать не навесь алфавит, а на его часть
+# 'А-С - певрая буква от А до С большая', [a-z] - вторая буква и дальше '*' любое количество символов.
 phone_numbers = re.findall(r'([A-C][a-z]+)', my_string)
 print(phone_numbers)
 
-# Диапазон можно указывать не на весь алфавит, а на конкретную букву например.
-phone_numbers = re.findall(r'([R][a-z]+)', my_string)
+# Диапазон можно указывать не навесь алфавит, а на конкретную букву например.
+# Первая буква большая или маленькая 'R'
+phone_numbers = re.findall(r'([Rr][a-z]+)', my_string)
+print(phone_numbers)
+
+# Чтобы исключить что-то используем дужки и знак вопроса знак восклицания '(?!)'
+# сначала пишем что исключаем потом условие и исключаем все что начинается на 're'
+phone_numbers = re.findall(r'((?!re)[Rr][a-z]+)', my_string)
 print(phone_numbers)

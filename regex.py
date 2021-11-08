@@ -20,13 +20,14 @@ andrey_str@gmail.com
 Andrey fust Find CHSN Проверка русского текста Андрей одолжил ДЕНЕГ Aaaaa Bbbbb Rrrrrr rrrr
 """
 
-# Ищем в строке имейл
+# Ищем в строке имейл. search - ищет только первое вхождение.
 pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
 match = re.search(pattern, my_string)
 if match:
     print(match.group())
     
 # Еще один вариант поиска имейлов с в другой записи. Выводи сразу все емейлы.
+# findall - ищет все вхождения
 email_patern  = r"[\w._-]+@[\w._-]+\.[\w.]+"
 result = re.findall(email_patern, my_string)
 print(result)

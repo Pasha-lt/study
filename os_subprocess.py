@@ -4,6 +4,14 @@
 # os.rename('old_name.txt', 'new_name.txt' )  # переименование файлов
 # os.remove('new_name.txt')  # Удаление файлов
 # os.makedirs('dir2')  # Создаем директорию
+# atime = os.path.getatime(path) # Дата последнего чтения
+# mtime = os.path.getmtime(path) # Дата последнего редактирования
+# print(f'Дата последнего использования: {datetime.fromtimestamp(atime)}')
+# print(f'Дата последнего редактирования: {datetime.fromtimestamp(mtime)}')
+
+# размер файла
+# size = os.path.getsize(path)
+# ksize = size//1024
 
 # Открываем файл
 # subprocess.call(['xdg-open', filename]) # Открыть файл linux

@@ -9,3 +9,15 @@ print(encoded_text)
 decoded_text = base64.b64decode(encoded_text) #декодируем из base64
 decode_byte = decoded_text.decode('utf-8') #декодируем из байт строки
 print(decode_byte)
+
+# кодируем рисунок в base64
+with open("2.png", "rb") as imageFile:
+    str = base64.b64encode(imageFile.read())
+    print(type(str))
+    with open("picture.txt","w") as f:
+        f.write(str.decode())
+    
+# преобразовываем из кода в рисунок
+image_binary=base64.decodebytes(str)
+with open('image.jpg','wb') as f:
+    f.write(image_binary)

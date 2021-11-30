@@ -1,3 +1,4 @@
+# Урок по рекурсии с решениями задач https://github.com/Pasha-lt/Skillbox-security/tree/main/Python_basic/lesson_21
 # пример 1 
 # поиск факториала
 def fact(x):

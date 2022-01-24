@@ -75,3 +75,23 @@ class Developer(Employee):
 Alex = Developer('Alex', 'Python', 5000)
 print(Alex)  # Вернется: Developer(name='Alex', lang='Python', salary=5000)
 ##### вариант с Data Class конец#####
+
+
+# еще один вариант
+my_dict = {"name":"Pasha", "age":"198", "position":"employer"}
+
+@dataclass
+class Data:
+    name: str
+    age: int
+    position: str
+    
+
+z = Data(name=my_dict["name"], age=my_dict["age"], position=my_dict["position"] )
+
+print(z.name, z.age, z.position) # Pasha 198 employer
+print(my_dict["name"], my_dict["age"], my_dict["position"]) # Pasha 198 employer
+
+assert z.name == my_dict["name"]
+assert z.age == my_dict["age"]
+assert z.position == my_dict["position"]

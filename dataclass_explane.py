@@ -95,3 +95,47 @@ print(my_dict["name"], my_dict["age"], my_dict["position"]) # Pasha 198 employer
 assert z.name == my_dict["name"]
 assert z.age == my_dict["age"]
 assert z.position == my_dict["position"]
+
+
+# Вариант когда у нас есть вложеность.
+from dataclasses import dataclass
+
+my_dict = [
+    {"животное": "собака", "окрас": "коричневый", "вес": 10, },
+    {"животное": "корова", "окрас": "черно-пестрая", "вес": 300},
+    {"животное": "коза", "окрас": "белая", "вес": 40}
+]
+
+
+@dataclass()
+class FeatureAnimal:
+    animal_type: str
+    color: str
+    weight: int
+
+
+@dataclass()
+class AnimalData:
+    data: [FeatureAnimal]
+
+
+def foo():
+    list_with_animal = []
+    for i in my_dict:
+        all_animals = FeatureAnimal(
+            animal_type=i["животное"],
+            color=i["окрас"],
+            weight=i["вес"]
+        )
+        
+        list_with_animal.append(all_animals)
+    z = AnimalData(data=list_with_animal)
+    return z
+
+
+z = foo()
+
+assert z.data[0].color == my_dict[0]["окрас"]
+assert z.data[1].animal_type == my_dict[1]["животное"]
+assert z.data[2].weight == my_dict[2]["вес"]
+

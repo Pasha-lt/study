@@ -9,12 +9,31 @@
 # print(f'Дата последнего использования: {datetime.fromtimestamp(atime)}')
 # print(f'Дата последнего редактирования: {datetime.fromtimestamp(mtime)}')
 
+import os
+folder_name = 'project'
+file_name = 'my_file.txt'
+
+uni_path = os.path.join('docs', folder_name, file_name) # склеиваем путь.
+print(uni_path)
+abs_path = os.path.abspath(file_name) # генерируем абсолютный путь.
+print(abs_path)
+step_up_path = os.path.abspath(os.path.join('..', '..')) # поднимаемся на две папки выше. на 1 = ..
+step_up_path = os.path.abspath(os.path.join(os.path.sep, os.path.sep)) # тоже что и выше
+print(step_up_path)
+
+# просматриваем каталог.
+# for i in os.listdir(os.path.abspath(os.path.join(os.path.sep))): #проходим по директории
+#     print(os.path.abspath(os.path.join(i)))  # Выводим файлы и папки
+    
+print(os.path.exists(abs_path))  # Проверяем существует ли такой путь
+
+
 # размер файла
 # size = os.path.getsize(path)
 # ksize = size//1024
 
 # Открываем файл
-# subprocess.call(['xdg-open', filename]) # Открыть файл linux
+# subprocess.call(['xdg-open', filename]) # Открыть файл linux или МАК
 # os.startfile(filename) # Открыть файл window
 
 

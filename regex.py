@@ -99,3 +99,10 @@ string = 'Вы можете посмотреть карту сайта <a href="
 pattern = r'<(.+?)>'
 result = re.sub(pattern, '', string)
 print(result)  # Вы можете посмотреть карту сайта тут. Посетите также
+
+
+data_with_info = ""
+contract_wallet_patern = r"0x\w{40}"
+result = re.findall(contract_wallet_patern, data_with_info)
+print(result)
+

@@ -103,6 +103,7 @@ print(result)  # Вы можете посмотреть карту сайта т
 
 data_with_info = ""
 contract_wallet_patern = r"0x\w{40}"
+# contract_wallet_patern = "/^0x[a-fA-F0-9]{40}$/" вариант Димы.
 result = re.findall(contract_wallet_patern, data_with_info)
 print(result)
 

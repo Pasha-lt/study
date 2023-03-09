@@ -1,2 +1,2 @@
-Copy and Modify Nginx services to run multiple nginx on multiple ports 
+Copy and Modify 3 Nginx services to run multiple nginx on multiple ports 
 with separate log, tmp, and config files.

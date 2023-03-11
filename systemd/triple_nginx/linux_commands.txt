@@ -1,0 +1,32 @@
+  466  systemctl start nginx@nginx1.service
+  467  systemctl enable nginx
+  468  systemctl enable nginx@nginx1.service
+  469  systemctl disable nginx
+  470  systemctl daemon-reload 
+  471  systemctl restart cups
+  482  systemctl enable nginx1.service
+  483  systemctl start nginx1.service
+  484  curl http://localhost:81
+  485  journalctl -xeu nginx1.service
+  486  systemctl start nginx1.service
+  487  systemctl
+  488  systemctl restart cups
+  489  curl http://localhost:80
+  490  systemctl start nginx1.service
+  491  curl http://localhost:81
+  492  curl http://localhost:82
+  493  systemctl restart nginx1.service
+  494  systemctl stop nginx1.service
+  495  systemctl start nginx1.service
+  496  curl http://localhost:81
+  497  systemctl stop nginx1.service
+  498  systemctl start nginx1.service
+  499  curl http://localhost:81
+  500  curl http://localhost:80
+  501  systemctl stop nginx1.service
+  502  systemctl start nginx1.service
+  503  curl http://localhost:81
+  504  systemctl enable nginx2.service
+  505  systemctl start nginx2.service
+  506  curl http://localhost:82
+  507  curl http://localhost:83

@@ -30,8 +30,6 @@
 # P.S. The program should not print anything to the screen.
 
 
-# Здесь объявляется класс Factory
-
 class Factory:
     def build_sequence(self):
         self.new_list = []

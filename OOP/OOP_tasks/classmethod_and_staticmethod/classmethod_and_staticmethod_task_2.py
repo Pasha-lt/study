@@ -71,13 +71,13 @@ class TextInput:
     def get_html(self):
         return f"<p class='login'>{self.name}: <input type='text' size={self.size} />"
 
-
     @classmethod
     def check_name(cls, name):
         if type(name) != str or len(name) < 3 or len(name) > 50:
             raise ValueError("Invalid field name")
         if not set(name) < set(cls.CHARS_CORRECT):
             raise ValueError("Invalid field name")
+
 
 class PasswordInput:
     CHARS = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя " + ascii_lowercase
@@ -91,16 +91,12 @@ class PasswordInput:
     def get_html(self):
         return f"<p class='password'>{self.name}: <input type='text' size={self.size} />"
 
-
     @classmethod
     def check_name(cls, name):
         if type(name) != str or len(name) < 3 or len(name) > 50:
             raise ValueError("Invalid field name")
         if not set(name) < set(cls.CHARS_CORRECT):
             raise ValueError("Invalid field name")
-
-
-
 
 
 class FormLogin:

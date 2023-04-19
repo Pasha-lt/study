@@ -33,7 +33,7 @@
 # Here x1, y1, x2, y2 are the corresponding numerical values of the coordinates.
 # 
 # Create an object rect of the Rectangle class with coordinates (0, 0), (20, 34).
-# 
+
 
 class Point:
     def __init__(self, x, y):

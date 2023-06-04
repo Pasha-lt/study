@@ -14,3 +14,16 @@
 # car.model = "Toyota"
 # P.S. Declare only the class in the program. Do not output anything to the screen.
 
+class Car:
+    def __init__(self):
+        self.__model = None
+
+    @property
+    def model(self):
+        return self.__model
+
+
+    @model.setter
+    def model(self, value):
+        if type(value) and 2 <= len(value) <=100:
+            self.__model = value

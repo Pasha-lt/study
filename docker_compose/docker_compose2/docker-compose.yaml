@@ -1,0 +1,15 @@
+version: "3"
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: jenkins.Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+
+  pytest:
+    build:
+      context: .
+      dockerfile: tests.Dockerfile
